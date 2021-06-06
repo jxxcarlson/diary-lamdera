@@ -29,3 +29,7 @@ type alias DataFile =
 
 type alias DataDict =
     Dict.Dict Username DataFile
+
+
+type alias DataId =
+    String
