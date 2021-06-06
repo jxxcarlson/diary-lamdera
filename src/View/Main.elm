@@ -84,7 +84,7 @@ viewDiaryEntry model datum =
             else
                 E.clipY
 
-        dateString = DateTimeUtility.zonedDateString model.zone datum.creationData
+        dateString = "**" ++ DateTimeUtility.zonedDateString model.zone datum.creationData ++ "**"
     in
     E.row
         [ Font.size 14

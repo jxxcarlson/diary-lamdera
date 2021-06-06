@@ -1,9 +1,16 @@
 
 
-.mm-paragraph {
+
+.X12 {
 	white-space: normal;
+	line-height: 2.0 !important; // ineffective
+	
 }
 
+.mm-paragraph {
+	white-space: normal;
+	line-height: 2.0 !important;
+}
 
 .elmsh-line {
     padding : 8px;
@@ -50,7 +57,7 @@
 .mm-h5 {font-size: 10pt}
 
 
-..mm-block-1 {
+.mm-block-1 {
    margin-left: 16px;
  }
 
