@@ -1,7 +1,7 @@
 module View.Input exposing
     ( passwordInput
     , snippetFilter
-    , snippetText
+    , editDiaryEntry
     , usernameInput
     )
 
@@ -53,8 +53,8 @@ snippetFilter model width_ =
     inputFieldTemplate (E.px width_) (E.px 33) "Filter ..." InputSnippetFilter model.inputSnippetFilter
 
 
-snippetText : FrontendModel -> Int -> String -> Element FrontendMsg
-snippetText model width_ text_ =
+editDiaryEntry : FrontendModel -> Int -> String -> Element FrontendMsg
+editDiaryEntry model width_ text_ =
     let
         attrs =
             case model.appMode of

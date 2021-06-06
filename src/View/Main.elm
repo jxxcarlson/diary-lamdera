@@ -7,7 +7,6 @@ import Element.Font as Font
 import Html exposing (Html)
 import Markdown.Option
 import Markdown.Render
-import Time
 import Types exposing (..)
 import View.Button as Button
 import View.Color as Color
@@ -36,13 +35,8 @@ mainColumn model =
             , header model
             , E.column [ E.spacing 12 ]
                 [ E.column [ E.spacing 12 ]
-                    [ View.Input.snippetText model (appWidth_ model) model.snippetText
-                    , E.row [ E.spacing 8, E.width (E.px (appWidth_ model)) ]
-                        [ View.Input.snippetFilter model (appWidth_ model - 150)
-                        , Button.sortByModificationDate
-                        , Button.randomize
-                        , E.el [ Font.color Color.white, Font.size 14, E.alignRight ] (E.text ("N = " ++ String.fromInt (List.length model.snippets)))
-                        ]
+                    [ View.Input.editDiaryEntry model (appWidth_ model) model.snippetText
+                    , controlAndFilterBar model 
                     , viewDiary model
                     ]
                 ]
@@ -50,7 +44,13 @@ mainColumn model =
             ]
         ]
 
-
+controlAndFilterBar model = 
+  E.row [ E.spacing 8, E.width (E.px (appWidth_ model)) ]
+                        [ View.Input.snippetFilter model (appWidth_ model - 150)
+                        , Button.sortByModificationDate
+                        , Button.randomize
+                        , E.el [ Font.color Color.white, Font.size 14, E.alignRight ] (E.text ("N = " ++ String.fromInt (List.length model.snippets)))
+                        ]
 viewDiary : Model -> Element FrontendMsg
 viewDiary model =
     E.column

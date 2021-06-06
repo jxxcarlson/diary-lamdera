@@ -3,13 +3,13 @@
 
 .X12 {
 	white-space: normal;
-	line-height: 2.0 !important; // ineffective
+	line-height: 2.0 !important; 
 	
 }
 
 .mm-paragraph {
 	white-space: normal;
-	line-height: 2.0 !important;
+	line-height:1.5 !important;
 }
 
 .elmsh-line {
