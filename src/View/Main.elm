@@ -58,7 +58,7 @@ viewDiary model =
         , E.paddingXY 0 0
         , E.scrollbarY
         , E.width (E.px <| appWidth_ model)
-        , E.height (E.px (appHeight_ model - 270))
+        , E.height (E.px (appHeight_ model - 370))
         , Background.color Color.darkBlue
         ]
         (List.map (viewDiaryEntry model) (Data.filter model.inputSnippetFilter model.snippets))

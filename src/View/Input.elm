@@ -59,12 +59,12 @@ editDiaryEntry model width_ text_ =
         attrs =
             case model.appMode of
                 EntryMode ->
-                    [ Background.color Color.paleViolet ]
+                    [ Background.color Color.paleViolet, E.scrollbarY ]
 
                 EditMode ->
-                    [ Background.color Color.palePink ]
+                    [ Background.color Color.palePink, E.scrollbarY ]
     in
-    multiLineTemplate attrs (E.px width_) (E.px 100) "Diary" InputSnippet text_
+    multiLineTemplate attrs (E.px width_) (E.px 200) "Diary" InputSnippet text_
 
 
 passwordInput model =
