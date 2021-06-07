@@ -7,6 +7,7 @@ module DateTimeUtility exposing
     , millisecondsFromDateString
     , yearFromPosix
     , zonedDateString
+    , weekDay
     , zonedDateTime
     , zonedTimeString
     )
@@ -196,6 +197,16 @@ zonedDateTime zone time_ =
 
 -- CONVERTERS
 
+weekDay : Time.Zone -> Time.Posix -> String
+weekDay zone time = 
+  case Time.toWeekday zone time of 
+     Time.Mon -> "Mon"
+     Time.Tue -> "Tue"
+     Time.Wed -> "Wed"
+     Time.Thu -> "Thu"
+     Time.Fri -> "Fri"
+     Time.Sat -> "Sat"
+     Time.Sun -> "Sun"
 
 hoursFromClockTime : Clock.Time -> String
 hoursFromClockTime time =
@@ -204,7 +215,8 @@ hoursFromClockTime time =
 
 minutesFromClockTime : Clock.Time -> String
 minutesFromClockTime time =
-    Clock.getMinutes time |> String.fromInt |> String.padLeft 2 '0'
+    Clock.getMinutes time
+     |> String.fromInt |> String.padLeft 2 '0'
 
 
 yearFromDate : Date -> String
